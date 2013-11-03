@@ -76,7 +76,7 @@ abstract class Command_Abstract
         }
     }
 
-    static function formatting($string, $formatter = 'texy')
+    static function formatting($string, $formatter = 'markdown')
     {
         switch ($formatter)
         {
@@ -93,12 +93,9 @@ abstract class Command_Abstract
 
     static function formattingByMarkdown($source)
     {
-        if (!function_exists('Markdown'))
-        {
-            require_once Q::ini('vendor_dir') . '/markdown/markdown.php';
-        }
-
-        return Markdown($source);
+        require_once Q::ini('vendor_dir') . '/markdown/Michelf/Markdown.php';
+        require_once Q::ini('vendor_dir') . '/markdown/Michelf/MarkdownExtra.php';
+        return \Michelf\Markdown::defaultTransform($source);
     }
 
     static function formattingByTexy($source)
