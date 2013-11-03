@@ -95,7 +95,7 @@ abstract class Command_Abstract
     {
         require_once Q::ini('vendor_dir') . '/markdown/Michelf/Markdown.php';
         require_once Q::ini('vendor_dir') . '/markdown/Michelf/MarkdownExtra.php';
-        return \Michelf\Markdown::defaultTransform($source);
+        return \Michelf\MarkdownExtra::defaultTransform($source);
     }
 
     static function formattingByTexy($source)

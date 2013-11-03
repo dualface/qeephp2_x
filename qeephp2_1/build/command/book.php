@@ -23,7 +23,7 @@ class Command_Book extends Command_Abstract
         {
             Helper_FileSys::mkdirs($this->_output_dir);
         }
-        $this->_output_dir = trim(realpath($this->_output_dir), '/\\');
+        $this->_output_dir = rtrim(realpath($this->_output_dir), '/\\');
 
         switch ($this->_docmode)
         {

@@ -8,6 +8,8 @@ abstract class Doc_Abstract
     public $contents;
     public $has_contents;
     public $last_modified;
+    public $format = "markdown";
+    public $format_extname = "md";
 
     function __construct($subject, $source_dir = null, $filename = null)
     {
@@ -20,7 +22,7 @@ abstract class Doc_Abstract
 
     function path()
     {
-        return rtrim($this->source_dir, '/\\') . "/{$this->filename}.texy";
+        return rtrim($this->source_dir, '/\\') . "/{$this->filename}.{$this->format_extname}";
     }
 
     function nodename()
