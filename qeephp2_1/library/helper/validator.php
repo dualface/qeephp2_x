@@ -150,7 +150,7 @@ abstract class QValidator
 
             if ($ret) continue;
 
-            $failed[] = $vf;
+            $failed[] = $v;
             $result = $result && $ret;
 
             if (!$result && !$check_all) return false;
